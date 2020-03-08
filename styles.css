@@ -3,7 +3,8 @@ body {
     margin-top: 1%;
 }
 
-header {
+.jumbotron {
+    /* text-align: center; */
     background-color: lightskyblue;
-    width: 100px;
 }
+

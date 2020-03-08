@@ -1,13 +1,16 @@
 var currentDate = document.getElementById("currentDate");
-var today = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+var today = moment().format("dddd, MMMM Do YYYY, h:mm a");
 
 
 
 $(document).ready(function () {
-    $("p").text(function() {
+    $(currentDate).text(function() {
         return "Today's date is " + today + ".";
     });
 
+    $("li").append("<input>");
+    $("li").append("<button>");
+    $("li").css("list-style", "none");
 
 });
 
