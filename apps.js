@@ -29,26 +29,12 @@ $(document).ready(function () {
             '</div>' +
             '</div>';
         blocks += hourBlocks;
-        var inputGroup = (".input-group");
-        // inputGroup = (".form-control").value;
-        // plans.push(inputGroup);
-        // console.log(".form-control");
-
-        // var input = document.querySelector(".form-control");
-        // plans.push(input);
     }
     $("#timeSlots").append(blocks);
 }
 timeBlocks();
 
 
-
-
-// var input = document.querySelector(".form-control");
-// var inputGroup = document.querySelector(".input-group");
-
-
-// console.log(input);
 
 function storePlans() {
     localStorage.setItem("inputvalue", JSON.stringify(plans));
@@ -57,7 +43,6 @@ function storePlans() {
   
   $("button").on("click", function(e) {
            e.preventDefault();
-        //    plans.push(inputGroup);
           storePlans();
     });
         
