@@ -1,152 +1,250 @@
 var currentDate = document.getElementById("currentDate");
 var today = moment().format("dddd, MMMM Do YYYY, h:mm a");
-var currentTime = moment().format("h a");
-var timeOfDay = ["4.00am", "5:00am", "6:00am", "7:00am", "8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm"];
-var plans = [];
-var storedPlans = JSON.parse(localStorage.getItem("inputValue"));
 
 
-
-
-$(document).ready(function () {
-    $(currentDate).text(function() {
-        return "Today's date is " + today + ".";
-    });
-    
-
-
-    function timeBlocks() {
-    let blocks = "";
-    for (let i = 0; i < timeOfDay.length; i++) {
-        var hourBlocks = "" +
-            '<div class="input-group mb-3">' +
-            '<div class="input-group-prepend">' +
-            '<span class="input-group-text">' + timeOfDay[i] + '</span>' +
-            '</div>' +
-            '<input type="text" class="form-control" id="' + timeOfDay[i] + '">' +
-            '<div class="input-group-append">' +
-            '<button class="btn btn-primary" data-time="' + timeOfDay[i] + '"><i class="fa fa-save"></i></button>' +
-            '</div>' +
-            '</div>';
-        blocks += hourBlocks;
-    }
-    $("#timeSlots").append(blocks);
-}
-timeBlocks();
-
-
-
-function storePlans() {
-    localStorage.setItem("inputvalue", JSON.stringify(plans));
-  }
-      
-  
-  $("button").on("click", function(e) {
-           e.preventDefault();
-          storePlans();
-    });
-        
-    
-
-    
- 
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    // for (var i = 0; i < timeOfDay.length; i++) {
-    //     var list = $("<li>");
-    //     var input = $("<input>");
-    //     var button = $("<button>");
-        
-    //     $(list).text(timeOfDay[i]);
-    //     $(list).css("list-style", "none");
-    //     $(input).attr("type", "text");
-    //     $(input).attr("class", "planInput");
-    //     $(button).text("Save");
-
-       
-    //     $(list).append(input, button);
-    //     $("ul").append(list);
-
-    //     $("button").on("click", function() {
-    //         localStorage.setItem("inputvalue", $(".planInput").val());
-    //         $(".planInput").text(localStorage.getItem("inputvalue"));
-    //         savePlans();
-    //     });
-
-
-    // }
-    
-    // function savePlans() {
-    //     var planInput = localStorage.getItem("inputValue"), 
-    //         plans = [];
-    //     if (!planInput) { planInput = ''; }  // initialize if null
-      
-      
-    //     plans.push(document.getElementById("inputValue").value);
-    //     planInput = plans.join(',');
-    //     localStorage.setItem("inputValue", planInput);
-    //     showPlans();
-    //   }
-  
-    //   function showPlans() {
-    //     var planText = localStorage.getItem("inputValue");
-    //   }  
-      
-    // Develop if statements that change input field colors based on current time
-    // Create a function that stores user input on click
-    
-    // $(document).ready(function(){
-    //     if(localStorage.getItem("inputvalue")){
-    //       $(".planInput").text(localStorage.getItem("inputvalue"));
-    //     }
-        
-    //     $("button").on("click", function() {
-    //     localStorage.setItem("inputvalue", $(".planInput").val());
-    //     $(".planInput").text(localStorage.getItem("inputvalue"));
-    // });
-        
-    // });
+// Prints the current date
+$(currentDate).text(function () {
+    return "Today's date is " + today + ".";
 });
 
 
+// Each of these functions create a time block that allow the user type in the input box and save it when the save button is clicked.
+function sixAm() {
+    var timeOfDay = "6:00am";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("6am");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
 
 
+    $("#6am").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#6am").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("6am", userInput);
+    });
+}
+sixAm()
+
+function sevenAm() {
+    var timeOfDay = "7:00am";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("7am");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
 
 
+    $("#7am").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#7am").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("7am", userInput);
+    });
+}
+sevenAm()
+
+function eightAm() {
+    var timeOfDay = "8:00am";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("8am");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
+
+
+    $("#8am").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#8am").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("8am", userInput);
+    });
+}
+eightAm()
+
+function nineAm() {
+    var timeOfDay = "9:00am";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("9am");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
+
+
+    $("#9am").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#9am").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("9am", userInput);
+    });
+}
+nineAm()
+
+function tenAm() {
+    var timeOfDay = "10:00am";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("10am");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
+
+
+    $("#10am").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#10am").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("10am", userInput);
+    });
+}
+tenAm()
+
+function elevenAm() {
+    var timeOfDay = "11:00am";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("11am");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
+
+
+    $("#11am").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#11am").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("11am", userInput);
+    });
+}
+elevenAm()
+
+function twelvePm() {
+    var timeOfDay = "12:00pm";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("12pm");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
+
+
+    $("#12pm").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#12pm").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("12pm", userInput);
+    });
+}
+twelvePm()
+
+function onePm() {
+    var timeOfDay = "1:00pm";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("1pm");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
+
+
+    $("#1pm").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#1pm").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("1pm", userInput);
+    });
+}
+onePm()
+
+function twoPm() {
+    var timeOfDay = "2:00pm";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("2pm");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
+
+
+    $("#2pm").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#2pm").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("2pm", userInput);
+    });
+}
+twoPm()
+
+function threePm() {
+    var timeOfDay = "3:00pm";
+    var input = $("<input>");
+    var button = $("<button>");
+    var retrieveInput = localStorage.getItem("3pm");
+    console.log(retrieveInput);
+    input.val(retrieveInput);
+
+
+    $("#3pm").text(timeOfDay);
+    input.attr("type", "text");
+    input.attr("class", "planInput");
+    button.text("Save");
+    $("#3pm").append(input, button);
+
+    button.on("click", function (e) {
+        e.preventDefault();
+        var userInput = input.val();
+        // console.log(userInput);
+        localStorage.setItem("3pm", userInput);
+    });
+}
+threePm()
